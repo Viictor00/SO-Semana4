@@ -63,7 +63,7 @@ int main(int argc, char *argv[]) {
 			strcpy (respuesta, "SI");
 			else
 				strcpy(respuesta, "NO");
-		else //decir si es alto
+		else if (codigo == 3) //decir si es alto
 		{
 			p = strtok(NULL, "/");
 			float altura = atof(p);
@@ -71,6 +71,36 @@ int main(int argc, char *argv[]) {
 				sprintf(respuesta, "%s: eres alto", nombre);
 			else
 				sprintf(respuesta, "%s: eres bajo", nombre);
+		}
+		else if (codigo == 4)
+		{
+			//saber si nombre es palindromo
+			int p_i=0;
+			int p_f=strlen(nombre)-1;
+			
+			while ((p_i<p_f) && (nombre[p_i] == nombre[p_f]))
+			{
+				p_i++;
+				p_f--;
+			}
+			if (p_i >= p_f)
+				sprintf(respuesta, "%s: es palindroma", nombre);
+			else
+				sprintf(respuesta, "%s: NO es palindroma", nombre);
+		}
+		else if (codigo == 5)
+		{
+			int i=0;
+			char mensaje[25];
+			while(i < strlen(nombre))
+			{
+				if (islower(nombre[i]) != 0)
+					mensaje[i] = toupper(nombre[i]);
+				else
+					mensaje[i] = nombre[i];
+				i++;
+			}
+			sprintf(respuesta, "%s", mensaje);
 		}
 		
 		
