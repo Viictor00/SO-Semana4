@@ -58,11 +58,13 @@ int main(int argc, char *argv[]) {
 		if (codigo == 1) //piden la longitud del nombre
 			printf(respuesta, "%d", strlen(nombre));
 		else if (codigo == 2)
+		{
 			//quieren saber si el nombre es bonito
 			if((nombre[0]=='M') || (nombre[0]=='S'))
 			strcpy (respuesta, "SI");
 			else
 				strcpy(respuesta, "NO");
+		}
 		else if (codigo == 3) //decir si es alto
 		{
 			p = strtok(NULL, "/");
